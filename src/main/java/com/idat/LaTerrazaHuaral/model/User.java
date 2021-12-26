@@ -40,6 +40,9 @@ public class User {
     @Column(length = 1)
     private String active;
 
+    @Column(name = "id_person")
+    private Integer idPerson;
+
     @Column(name = "id_rol")
     private Integer idRol;
 
@@ -51,16 +54,20 @@ public class User {
     @UpdateTimestamp
     private Date dateUpdated;
 
-    @OneToOne
-    @JoinColumn(name = "id_role", insertable = false, updatable = false)
-    private Role role;
-
 
     @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "id_person", nullable = false, unique = true,
+    @JoinColumn(name = "id_role", insertable = false, updatable = false)
+    @JsonBackReference
+    private Role role;
+
+    @OneToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "id_person", nullable = false, unique = true, insertable = false, updatable = false,
     foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_person) references person(id_person)"))
     @JsonBackReference
     private Person person;
+
+
+    
 
 
 }

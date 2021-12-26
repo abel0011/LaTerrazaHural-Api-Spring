@@ -31,8 +31,8 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_person")
-    private Integer id;
+    @Column(name = "idPerson")
+    private Integer idPerson;
 
     @Column(name = "firstName")
     private String firstName;
@@ -70,7 +70,7 @@ public class Person {
     @UpdateTimestamp
     private Date dateUpdated;
 
-     @OneToOne(mappedBy = "person",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY) //mapea la taba donde no existe FK
+    @OneToOne(mappedBy = "person",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY) //mapea la taba donde no existe FK
     private User user;
     
 }

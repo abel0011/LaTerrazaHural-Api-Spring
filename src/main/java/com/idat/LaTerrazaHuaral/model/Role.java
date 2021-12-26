@@ -9,12 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,23 +34,9 @@ public class Role {
     @UpdateTimestamp
     private Date dateUpdated;
 
-    // @OneToOne(cascade = {CascadeType.ALL})
-    // @JoinColumn(name = "id_users", nullable = false, unique = true,
-    // foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_users) references user(id_users)"))
-    // @JsonBackReference
-    // private User user;
-    // @OneToMany(mappedBy = "role")
-    // private Collection<User> user  = new ArrayList<User>();
-    // @ManyToMany(mappedBy = "role", cascade = {CascadeType.ALL})
-    // private List<Permission> permissions;
 
-   	// @ManyToOne
-	// @JoinColumn(name = "id_user",nullable = false,
-    // foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_user) references user(id_user)"))
-	// @JsonBackReference // cortar recursividad infinita!!
-    // private User user; 
-
-
-
-
+    @OneToOne(mappedBy = "role",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY) //mapea la taba donde no existe FK
+    private User user;
+ 
 }
+
