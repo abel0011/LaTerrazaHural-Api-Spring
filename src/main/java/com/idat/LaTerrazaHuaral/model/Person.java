@@ -8,10 +8,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -70,7 +73,13 @@ public class Person {
     @UpdateTimestamp
     private Date dateUpdated;
 
-    @OneToOne(mappedBy = "person",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY) //mapea la taba donde no existe FK
-    private User user;
+    @OneToOne(mappedBy = "person"
+    ,cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY
+    ) //mapea la taba donde no existe FK
+    private User users;
+
+    // @OneToOne(cascade = CascadeType.ALL)
+    // @JoinColumn(name = "id_person", referencedColumnName = "person")
+    // @JsonBackReference
     
 }

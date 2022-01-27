@@ -10,5 +10,4 @@ public class CreateUserDto {
     String email;
     String active;
     Integer idRol;
-    Integer idPerson;
 }

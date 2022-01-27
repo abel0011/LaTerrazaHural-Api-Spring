@@ -1,5 +1,7 @@
 package com.idat.LaTerrazaHuaral.security.controller;
 
+import java.util.List;
+
 import com.idat.LaTerrazaHuaral.model.Person;
 import com.idat.LaTerrazaHuaral.model.User;
 import com.idat.LaTerrazaHuaral.model.dto.CreatePersonDto;
@@ -80,6 +82,10 @@ public class AuthController {
     @ApiOperation("Register User")
     @ApiResponse(code = 200, message = "OK")
     public ResponseEntity<User> saveUser(@RequestBody CreateUserDto user) {
+
+        List<Person> listPerson = personService.getAll();
+        Person person = listPerson.get(listPerson.size()-1);
+
         User newUser = new User();
 
         
@@ -88,7 +94,7 @@ public class AuthController {
         newUser.setEmail(user.getEmail());
         newUser.setActive("A");
         newUser.setIdRol(user.getIdRol());
-        newUser.setIdPerson(user.getIdPerson());
+        newUser.setIdPerson(person.getIdPerson());
         return new ResponseEntity<>(userService.save(newUser), HttpStatus.OK);
     }
 

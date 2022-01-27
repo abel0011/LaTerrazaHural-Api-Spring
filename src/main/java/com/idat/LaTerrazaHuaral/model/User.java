@@ -10,9 +10,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -60,12 +57,19 @@ public class User {
     @JsonBackReference
     private Role role;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.ALL})
+    private List<Reservation> reservation;
+
     @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "id_person", nullable = false, unique = true, insertable = false, updatable = false,
-    foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_person) references person(id_person)"))
+    @JoinColumn(name = "id_person",     nullable = false,     insertable = false, updatable = false
+    ,foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_person) references person(id_person)")    )
     @JsonBackReference
     private Person person;
 
+    // @OneToOne(mappedBy = "users")
+    // @JsonBackReference
+    // private Person person;
 
     
 
