@@ -51,8 +51,9 @@ public class PersonController {
         }).orElse(null);
 
     findPerson.setFirstName(personParan.getFirstName());
-    // String middleName;
+    findPerson.setFirstName(personParan.getMiddleName());
     findPerson.setLastName(personParan.getLastName());
+    findPerson.setLastName(personParan.getBirthName());
     // String birthName;
     findPerson.setPhone(personParan.getPhone());
     findPerson.setDni(personParan.getDni());
