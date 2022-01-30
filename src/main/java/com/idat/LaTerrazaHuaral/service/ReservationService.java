@@ -27,6 +27,10 @@ public class ReservationService {
         return repository.findById(idReservation);
     }
 
+    public List<Reservation> findByIdUser(Integer idUser) {
+        return repository.findByIdUser(idUser);
+    }
+
     public Reservation save(Reservation reservation) {
         return repository.save(reservation);
     }

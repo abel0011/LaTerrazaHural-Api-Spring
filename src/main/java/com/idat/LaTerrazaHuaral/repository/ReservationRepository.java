@@ -37,6 +37,12 @@ public class ReservationRepository  implements IReservationRepository{
         crud.deleteById(idTables);
     }
 
+
+    @Override
+    public List<Reservation> findByIdUser(Integer idUser) {
+        return crud.findByIdUser(idUser);
+    }
+
     
     
     

@@ -24,5 +24,16 @@ INSERT INTO laterraza.tables (date_created, date_updated, description, number_pe
 INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa de reuniones', 5, 2, 'A');
 INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa de celebraciones', 5, 3, 'A');
 INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa Vip', 5, 4, 'A');
-INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa de eventos', 5, 5, 'A');
+INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa de eventos', 2, 5, 'A');
+
+INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa con vista al mar', 2, 5, 'A');
+INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa de reuniones', 4, 6, 'A');
+INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa de celebraciones', 3, 7, 'A');
+INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa Vip', 2, 8, 'A');
+
+INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa con vista al mar', 2, 9, 'A');
+INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa de reuniones', 4, 10, 'A');
+INSERT INTO laterraza.tables (date_created, date_updated, description, number_person, number_table, status) VALUES('2021-10-09 10:00:00', '2021-10-09 10:00:00', 'Mesa de celebraciones', 3, 11, 'A');
+I
+I
 --END MESAS

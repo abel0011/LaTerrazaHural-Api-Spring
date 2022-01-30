@@ -55,13 +55,12 @@ public class ReservationController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    // FILTRA LAS RESERVAS POR EL idStateReservation
-    // @GetMapping("/findByIdStateReservation/{idStateReservation}")
-    // @ApiOperation("Search by idStateReservation")
-    // @ApiResponses({@ApiResponse(code = 200, message = "OK"), @ApiResponse(code = 404, message = "Reservation not found")})
-    // public ResponseEntity<List<Reservation>> getByIdStateReservation(@ApiParam(value = "The id of state Reservation", required = true, example = "5") @PathVariable("idStateTable") String id) {
-    //     return new ResponseEntity<>(reservationService.findByIdStateTables(id), HttpStatus.OK);
-    // }
+    @GetMapping("/findByIdUserReservation/{idUser}")
+    @ApiOperation("Search by idStateReservation")
+    @ApiResponses({@ApiResponse(code = 200, message = "OK"), @ApiResponse(code = 404, message = "Reservation not found")})
+    public ResponseEntity<List<Reservation>> getByIdUserReservation(@ApiParam(value = "The id of state Reservation", required = true, example = "5") @PathVariable("idUser") Integer idUser) {
+        return new ResponseEntity<>(reservationService.findByIdUser(idUser), HttpStatus.OK);
+    }
 
     @PostMapping
     @ApiOperation("Save a Table")
@@ -84,7 +83,6 @@ public class ReservationController {
         }).orElse(null);
 
         table.setStatus("R");
-
 
         return new ResponseEntity<>(reservationService.save(newReservation), HttpStatus.CREATED);
     }

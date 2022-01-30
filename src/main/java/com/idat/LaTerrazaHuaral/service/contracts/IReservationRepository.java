@@ -9,6 +9,7 @@ import com.idat.LaTerrazaHuaral.model.Reservation;
 public interface IReservationRepository {
 
     List<Reservation> getAll();
+    List<Reservation> findByIdUser(Integer idUser);
     Optional<Reservation> findById(int idTable);
     Reservation save(Reservation reservation);
     void delete(int idReservation);
