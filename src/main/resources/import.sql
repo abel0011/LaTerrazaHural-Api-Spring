@@ -6,7 +6,7 @@ INSERT INTO laterraza.roles (date_created, date_updated, description) VALUES ('2
 -- END ROLES                                                                            
 
 -- PERSON
-INSERT INTO laterraza.person (active, birth_name, date_created, date_of_birth, date_updated, dni, first_name, last_name, middle_name, phone, id_role) VALUES('A', 'DRAPER', '2021-10-09 10:00:00', '2021-10-02', '2021-10-09 10:00:00', '77711234', 'JOHN', 'THOMAS', 'THOMAS', '123456789', 2);
+INSERT INTO laterraza.person (active, birth_name, date_created, date_of_birth, date_updated, dni, first_name, last_name, middle_name, phone, id_role) VALUES('A', 'DRAPER', '2000-10-09 10:00:00', '2000-10-02', '2000-10-09 10:00:00', '77711234', 'JOHN', 'THOMAS', 'THOMAS', '123456789', 2);
 -- INSERT INTO laterraza.person (active, birth_name, date_created, date_of_birth, date_updated, dni, first_name, last_name, middle_name, phone, id_role) VALUES ('A','PEREZ','2022-01-26 15:18:11.281000000','2021-12-11','2022-01-26 15:18:11.281000000','12345621','DANIELA','RUIZ','JENIFER','987654211',2)
 -- END PERSON
 
